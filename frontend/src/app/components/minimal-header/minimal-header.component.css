@@ -1,0 +1,55 @@
+.minimal-header {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.header img {
+  margin: 0 16px;
+}
+
+.header #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.header #youtube-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.header #twitter-logo:hover,
+.header #youtube-logo:hover {
+  opacity: 0.8;
+}
+*/
