@@ -25,20 +25,6 @@ input[type=text] {
   box-sizing: border-box;
 }
 
-input[type= checkbox_admin] {
-  position: relative;
-  width: 100%;
-  right: 15em;
-  bottom: 0em;
-}
-
-input[type= checkbox_remember] {
-  position: relative;
-  width: 100%;
-  right: 5em;
-  bottom: 0em;
-}
-
 
 /* Set a style for all buttons */
 button {
