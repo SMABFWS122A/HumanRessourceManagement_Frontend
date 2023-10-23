@@ -1,9 +1,10 @@
+
 form {
   position: fixed;
-  bottom: 15em;
+  bottom: 8em;
   right: 30em;
   width: 30%;
-  border: 2px solid rgba(7, 57, 148, 0.06);
+  border: none;
   padding: 40px 40px;
 }
 input[type=password] {
@@ -41,7 +42,13 @@ button {
 button:hover {
   opacity: 0.8;
 }
-
+img.avatar {
+  position: fixed;
+  right: 41em;
+  bottom: 32em;
+  border-radius: 70%;
+  width: 11%;
+}
 /* Extra style for the cancel button (red) */
 .cancelbtn {
   width: auto;
