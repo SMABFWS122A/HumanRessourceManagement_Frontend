@@ -1,4 +1,4 @@
-.buchung{
+.anträge{
   position: fixed ;
   right: 15em;
   bottom: 10em;
@@ -16,7 +16,7 @@
   margin: 8px;
 }
 
-.korrektur{
+.buchung{
   position: fixed ;
   right: 15em;
   bottom: 13em;
@@ -37,7 +37,7 @@
 .gleitzeit {
   position: fixed;
   right: 10.8em;
-  bottom: 13em;
+  bottom: 15.5em;
   display: inline-block;
   background-color: #dad0d0;
   border-radius: 30px;
@@ -45,12 +45,31 @@
   color: #34599f;
   text-align: center;
   font-size: 25px;
-  padding: 40px;
+  padding: 25px;
   width: 300px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 10px;
 }
+
+.urlaubstage {
+  position: fixed;
+  right: 10.8em;
+  bottom: 11.5em;
+  display: inline-block;
+  background-color: #dad0d0;
+  border-radius: 30px;
+  border: 4px double #345faf;
+  color: #34599f;
+  text-align: center;
+  font-size: 25px;
+  padding: 25px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+}
+
 
 
 
