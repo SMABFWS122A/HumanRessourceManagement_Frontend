@@ -1,0 +1,73 @@
+.dropdown {
+  align-items: center;
+  margin: 15px;
+  width: 96%;
+}
+
+.beg {
+    display: block;
+    margin: 10px;
+    align-content: center;
+    font:
+      1rem 'Fira Sans',
+      sans-serif;
+}
+
+.start{
+  margin: 10px;
+  display: block;
+  align-content: center;
+  font:
+    1rem 'Fira Sans',
+    sans-serif;
+}
+.text{
+  align-items: center;
+  height: 300%;
+  margin: 130px;
+  font:
+    2rem 'Fira Sans',
+    sans-serif;
+}
+.end{
+  display: block;
+  margin: 10px;
+  align-content: center;
+  font:
+    1rem 'Fira Sans',
+    sans-serif;}
+
+input,
+label {
+  width: 98%;
+  margin: 0.4rem 0;
+}
+
+.reason{
+  height: 100px;
+  width: 98%;
+  margin: auto;
+}
+
+.Menü {
+  border-spacing: 1em 0.5em;
+  position: absolute;
+  width: 25%;
+  bottom: 15em;
+  right: 17em;
+  margin: auto;
+}
+
+.send{
+  display: inline-block;
+  background-color: #5e7950;
+  border-radius: 5px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  font-size: 18px;
+  padding: 10px 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 8px;
+}
