@@ -12,6 +12,29 @@
   justify-content: space-between;
 }
 
+
+.b1 {
+  font-size: 150%;
+  background-color: #6c6e6c;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
+.b2 {
+  font-size: 150%;
+  background-color: #6c6e6c;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
 .button{
   background-color: #807777;
   border-radius: 5px;
