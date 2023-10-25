@@ -1,9 +1,16 @@
-<div>
-  <button type="button" class="urlaubstage">Urlaubstage</button>
-  <button type="button" class="gleitzeit">Gleitzeit</button>
-  <a type="button" class="buchung" href="http://localhost:4200/time-booking">Zeitbuchungen</a>
-  <a type="button" class="anträge" href="http://localhost:4200/absence">Abwesenheitsanträge</a>
-  <app-clock></app-clock>
-  <app-calendar></app-calendar>
+<div class="main-content">
+  <div>
+    <app-calendar></app-calendar>
+  </div>
+  <div class="left-content">
+      <app-clock></app-clock>
+      <button type="button" class="urlaubstage">Urlaubstage</button>
+      <button type="button" class="gleitzeit">Gleitzeit</button>
+
+<!--      die volle URL hier rein coden ist für den Anfang ok
+           besser wäre aber wenn man nur auf den Pfad verweist-->
+      <a type="button" class="buchung" href="http://localhost:4200/time-booking">Zeitbuchungen</a>
+      <a type="button" class="anträge" href="http://localhost:4200/absence">Abwesenheitsanträge</a>
+  </div>
 </div>
 

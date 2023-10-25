@@ -1,8 +1,18 @@
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-content {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .anträge{
-  position: fixed ;
-  right: 15em;
-  bottom: 10em;
-  display: inline-block;
   background-color: #807777;
   border-radius: 5px;
   border: 4px double #cccccc;
@@ -17,10 +27,6 @@
 }
 
 .buchung{
-  position: fixed ;
-  right: 15em;
-  bottom: 13em;
-  display: inline-block;
   background-color: #807777;
   border-radius: 5px;
   border: 4px double #cccccc;
@@ -35,10 +41,6 @@
 }
 
 .gleitzeit {
-  position: fixed;
-  right: 10.8em;
-  bottom: 15.5em;
-  display: inline-block;
   background-color: #dad0d0;
   border-radius: 30px;
   border: 4px double #345faf;
@@ -53,10 +55,6 @@
 }
 
 .urlaubstage {
-  position: fixed;
-  right: 10.8em;
-  bottom: 11.5em;
-  display: inline-block;
   background-color: #dad0d0;
   border-radius: 30px;
   border: 4px double #345faf;
