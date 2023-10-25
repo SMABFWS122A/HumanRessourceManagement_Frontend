@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import {ClockComponent} from "./components/clock/clock.component";
 import { TimeBookingComponent } from './components/time-booking/time-booking.component';
+import { AbsenceComponent } from './components/absence/absence.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TimeBookingComponent } from './components/time-booking/time-booking.com
     CalendarComponent,
     DashboardComponent,
     ClockComponent,
-    TimeBookingComponent
+    TimeBookingComponent,
+    AbsenceComponent
   ],
   imports: [
     BrowserModule,
