@@ -1,0 +1,37 @@
+.gehenbtn{
+    position: fixed ;
+    right: 15em;
+    bottom: 15em;
+    display: inline-block;
+    background-color: #a80909;
+    border-radius: 5px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 8px;
+}
+.kommenbtn{
+    position: fixed ;
+    right: 15em;
+    bottom: 18em;
+    display: inline-block;
+    background-color: #379801;
+    border-radius: 5px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 8px;
+}
+button:hover {
+    opacity: 0.8;
+}

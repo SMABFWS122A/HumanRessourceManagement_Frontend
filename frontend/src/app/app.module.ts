@@ -8,6 +8,7 @@ import { MinimalHeaderComponent } from './components/minimal-header/minimal-head
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import {ClockComponent} from "./components/clock/clock.component";
+import { TimeBookingComponent } from './components/time-booking/time-booking.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ClockComponent} from "./components/clock/clock.component";
     DashboardComponent,
     CalendarComponent,
     DashboardComponent,
-    ClockComponent
+    ClockComponent,
+    TimeBookingComponent
   ],
   imports: [
     BrowserModule,
