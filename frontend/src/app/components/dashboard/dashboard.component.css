@@ -12,7 +12,7 @@
   justify-content: space-between;
 }
 
-.anträge{
+.button{
   background-color: #807777;
   border-radius: 5px;
   border: 4px double #cccccc;
@@ -26,8 +26,8 @@
   margin: 8px;
 }
 
-.buchung{
-  background-color: #807777;
+.button:hover{
+  background-color: grey;
   border-radius: 5px;
   border: 4px double #cccccc;
   color: #eeeeee;
@@ -53,6 +53,7 @@
   cursor: pointer;
   margin: 10px;
 }
+
 
 .urlaubstage {
   background-color: #dad0d0;
