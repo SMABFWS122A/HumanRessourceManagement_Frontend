@@ -4,22 +4,21 @@
   justify-content: space-between ;
   flex-basis: auto;
 }
-.right-content{
-  padding: 90px 30px 90px 30px;
-  border-top-left-radius: 25%;
-  border-top-right-radius: 25%;
-  border-bottom-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  border: 4px double #bebdbd;
-}
 
 .left-content {
   display: flex;
   align-self: center;
   width: 65%;
+}
+
+.right-content{
+  padding: 30px 30px 30px 30px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  border-radius: 10px;
 }
 
 .text {
@@ -29,33 +28,28 @@
 }
 
 .dropdown{
-  font-size: 150%;
-  margin: 20px;
+  font-size: 100%;
+  margin: 10px 0 10px 0;
+  padding: 5px 10px 5px 10px;
+  background-color: #E4E4E4;
+  border: 0;
 }
 
-.start{
+.date-text {
   font-size: 120%;
   margin: 10px;
   text-align: start;
 }
 
-.end{
-  font-size: 120%;
-  margin: 10px;
-  text-align: start;
-}
-
-#end {
+.date-tag {
   font-size: 120%;
   margin-bottom: 10px;
   align-content: center;
+  padding: 5px 10px 5px 10px;
+  background-color: #E4E4E4;
+  border: 0;
 }
 
-#start {
-  font-size: 120%;
-  margin-bottom: 10px;
-  align-content: center;
-}
 
 .beg{
   font-size: 120%;
@@ -65,13 +59,14 @@
 
 .reason {
   font-size: 120%;
+  background-color: #E4E4E4;
+  margin: 0 0 10px 0;
 }
 
 .send {
   width: 30%;
   font-size: 120%;
   margin-top: 10px;
-  align-self: center;
   background-color: #4e723b;
   border-radius: 5px;
   border: 4px double #cccccc;
