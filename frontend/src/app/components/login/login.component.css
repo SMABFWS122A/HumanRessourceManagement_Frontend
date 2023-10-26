@@ -1,35 +1,46 @@
-
 form {
-  position: fixed;
-  bottom: 8em;
-  right: 30em;
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10% ;
+  box-shadow: 0 0 5px #ea8f56;
+  margin: auto;
+  background: #fbfcfd;
+  width: 40%;
   border: none;
   padding: 40px 40px;
+}
+.first{
+  font-size: 200%;
+  align-self: center;
+  margin-bottom: 20px;
 }
 input[type=password] {
   width: 100%;
   padding: 10px 10px;
   margin: 20px 0;
   display: inline-block;
-  border: 5px solid #ccc;
+  border: 5px solid #041a44;
   box-sizing: border-box;
 }
 
-/* Full-width inputs */
+.bn {
+  font-size: 130%;
+}
+
+.pw {
+  font-size: 130%;
+}
 input[type=text] {
   width: 100%;
   padding: 10px 10px;
   margin: 20px 0;
   display: inline-block;
-  border: 5px solid #ccc;
+  border: 5px solid #041a44;
   box-sizing: border-box;
 }
 
-
-/* Set a style for all buttons */
 button {
-  background-color: #0bcb0e;
+  background-color: #041a44;
   color: white;
   padding: 10px 20px;
   margin: 8px 0;
@@ -38,43 +49,32 @@ button {
   width: 100%;
 }
 
-/* Add a hover effect for buttons */
 button:hover {
-  opacity: 0.8;
+  opacity: 1.2;
 }
-img.avatar {
-  position: fixed;
-  right: 41em;
-  bottom: 32em;
+/*img.avatar {
   border-radius: 70%;
   width: 11%;
-}
-/* Extra style for the cancel button (red) */
-.cancelbtn {
+}*/
+/*.cancelbtn {
   width: auto;
   padding: 10px 18px;
   background-color: #d2240c;
-}
-
-
-/* Add padding to containers */
-.container {
+}*/
+/*.container {
   padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
+}*/
+/*span.psw {
   float: right;
   padding-top: 16px;
-}
+}*/
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+/*@media screen and (max-width: 300px) {
   span.psw {
     display: block;
     float: none;
-  }
-  .cancelbtn {
+  }*/
+ /* .cancelbtn {
     width: 100%;
-  }
-}
+  }*/
+
