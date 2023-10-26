@@ -1,11 +1,24 @@
+<h1>Hallo, Martin Thomas</h1>
+
 <div class="main-content">
   <div>
     <app-calendar></app-calendar>
   </div>
   <div class="left-content">
       <app-clock></app-clock>
-      <button type="button" class="urlaubstage">Urlaubstage</button>
-      <button type="button" class="gleitzeit">Gleitzeit</button>
+      <app-info-tile
+        [headline] = "'Urlaubstage'"
+        [number] = "14"
+        [unitDesignation]= "'verfügbare Tage'"
+        [image]="'assets/icons/suitcase.png'"
+        style="margin-bottom: 15px"
+      ></app-info-tile>
+      <app-info-tile
+        [headline] = "'Gleitzeit'"
+        [number] = "13.08"
+        [unitDesignation]= "'Stunden'"
+        [image]="'assets/icons/save-time.png'"
+      ></app-info-tile>
       <button class="b1" type="button" routerLink="/time-booking">Zeitbuchungen</button>
       <button class="b2" type="button" routerLink="/absence">Abwesenheitsanträge</button>
   </div>

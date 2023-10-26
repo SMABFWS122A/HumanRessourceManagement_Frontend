@@ -10,6 +10,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import {ClockComponent} from "./components/clock/clock.component";
 import { TimeBookingComponent } from './components/time-booking/time-booking.component';
 import { AbsenceComponent } from './components/absence/absence.component';
+import { InfoTileComponent } from './components/shared/info-tile/info-tile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AbsenceComponent } from './components/absence/absence.component';
     DashboardComponent,
     ClockComponent,
     TimeBookingComponent,
-    AbsenceComponent
+    AbsenceComponent,
+    InfoTileComponent
   ],
   imports: [
     BrowserModule,
