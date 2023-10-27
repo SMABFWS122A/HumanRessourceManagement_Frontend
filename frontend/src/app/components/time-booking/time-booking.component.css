@@ -1,7 +1,4 @@
 .gehenbtn{
-    position: fixed ;
-    right: 15em;
-    bottom: 15em;
     display: inline-block;
     background-color: #a80909;
     border-radius: 5px;
@@ -16,9 +13,6 @@
     margin: 8px;
 }
 .kommenbtn{
-    position: fixed ;
-    right: 15em;
-    bottom: 18em;
     display: inline-block;
     background-color: #379801;
     border-radius: 5px;
