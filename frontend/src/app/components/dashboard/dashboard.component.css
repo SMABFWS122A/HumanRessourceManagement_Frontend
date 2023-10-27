@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 
-.left-content {
+.right-content {
   display: flex;
   flex-flow: column;
   flex-grow: 1;
@@ -12,10 +12,8 @@
   justify-content: space-between;
 }
 
-
-.b1 {
-  font-size: 150%;
-  background-color: #6c6e6c;
+.button-type {
+  background-color: #21376A;
   color: white;
   padding: 10px 20px;
   margin: 8px 0;
@@ -24,72 +22,8 @@
   width: 50%;
 }
 
-.b2 {
-  font-size: 150%;
-  background-color: #6c6e6c;
-  color: white;
-  padding: 10px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 50%;
-}
-
-.button{
-  background-color: #807777;
-  border-radius: 5px;
-  border: 4px double #cccccc;
-  color: #eeeeee;
-  text-align: center;
-  font-size: 18px;
-  padding: 5px;
-  width: 300px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 8px;
-}
-
-.button:hover{
-  background-color: grey;
-  border-radius: 5px;
-  border: 4px double #cccccc;
-  color: #eeeeee;
-  text-align: center;
-  font-size: 18px;
-  padding: 5px;
-  width: 300px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 8px;
-}
-
-.gleitzeit {
-  background-color: #dad0d0;
-  border-radius: 30px;
-  border: 4px double #345faf;
-  color: #34599f;
-  text-align: center;
-  font-size: 25px;
-  padding: 25px;
-  width: 300px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 10px;
-}
-
-
-.urlaubstage {
-  background-color: #dad0d0;
-  border-radius: 30px;
-  border: 4px double #345faf;
-  color: #34599f;
-  text-align: center;
-  font-size: 25px;
-  padding: 25px;
-  width: 300px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 10px;
+.button-type:hover {
+  background-color: #f39201;
 }
 
 
