@@ -12,8 +12,8 @@
 #clock{
   width: 100px;
   height: 100px;
-  background: #4250b0;
-  border: 6.42857px solid #0a1256;
+  background: lightgrey;
+  border: 3px solid darkgrey;
   border-radius: 50%;
   position: relative;
   box-shadow: inset 0 1.78571px 8.92857px #00000080,
@@ -43,7 +43,7 @@
   border-radius: 50%;
   left: calc(50% - 3.21429px);
   top: calc(50% - 3.21429px);
-  box-shadow: 0 0.71429px 1.42857px #00000026;
+  box-shadow: 0 0.71429px 1.42857px rgba(0,0,0,0.12);
 }
 
 #clock li {
@@ -61,9 +61,9 @@
 
 .numbers span {
   display: block;
-  color: #dbe7fd;
+  color: black;
   font-size: 13.57143px;
-  text-shadow: 01.78571px 6.42857px #00000026, 0  0.71429px 1.07143px #00000033;
+  text-shadow: 1px 1px #00000026, 0  0.71429px 1.07143px #00000033;
 }
 
 .numbers:nth-child(1) {
@@ -151,7 +151,8 @@
   width: 1.42857px;
   height: 38.21429px;
   border-radius:  0.71429px;
-  background: #FD2E62;
+  background: black;
+  border-radius: 5px;
   position: absolute;
   left: calc(50% -  0.71429px);
   top: 19.64286px;
@@ -169,7 +170,8 @@
   width: 2.85714px;
   height: 28.21429px;
   border-radius: 1.42857px 1.42857px 0.71429px 0.71429px;
-  background: #bed4fd;
+  background: black;
+  border-radius: 5px;
   position: absolute;
   left: calc(50% + 10.71429px);
   top: 29%;
@@ -188,7 +190,8 @@
   width: 4.28571px;
   height: 23.21429px;
   border-radius: 2.14286px 2.14286px 1.07143px 1.07143px;
-  background: #07f3dfb4;
+  background: black;
+  border-radius: 5px;
   position: absolute;
   left: calc(50% - 1.42857px);
   top: 50%;
