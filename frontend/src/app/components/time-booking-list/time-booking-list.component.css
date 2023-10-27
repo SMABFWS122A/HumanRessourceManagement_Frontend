@@ -49,56 +49,46 @@ header .current-date{
   font-size: 1.45rem;
   font-weight: 500;
 }
+
+
 .timeBooking{
   padding: 20px;
 }
+
 .timeBooking ul{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   list-style: none;
   text-align: center;
 }
-.timeBooking .days{
-  margin-bottom: 20px;
-}
 
-.timeBooking li{
-  color: #333;
-  width: calc(100% / 7);
-  font-size: 1.07rem;
-}
-.timeBooking .weekdays li{
+.timeBooking .days li{
   font-weight: 500;
   cursor: default;
 }
-.timeBooking .days li{
+
+.timeBooking .days .times{
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px 0 5px;
+}
+
+.timeBooking .days .times li{
+  display: flex;
+  flex-direction: row;
   z-index: 1;
   cursor: pointer;
   position: relative;
+  font-weight: 1;
   margin-top: 30px;
+  padding: 0 2px 0 2px;
 }
-.days li.inactive{
-  color: #aaa;
-}
-.days li.active{
-  color: #fff;
-}
-
-.days li::before{
-  position: absolute;
-  content: "";
-  left: 50%;
-  top: 50%;
-  height: 40px;
-  width: 40px;
-  z-index: -1;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.days li.active::before{
-  background: #21376A;
+.timeBooking .days .times li .timeBookingType{
+  align-self: center;
+  margin-right: 5px;
 }
 
-.days li:not(.active):hover::before{
+.timeBooking .days .times li:hover{
   background: #f2f2f2;
+  border-radius: 10px;
 }
