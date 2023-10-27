@@ -11,6 +11,7 @@ import {ClockComponent} from "./components/clock/clock.component";
 import { TimeBookingComponent } from './components/time-booking/time-booking.component';
 import { AbsenceComponent } from './components/absence/absence.component';
 import { InfoTileComponent } from './components/shared/info-tile/info-tile.component';
+import { TimeBookingListComponent } from './components/time-booking-list/time-booking-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InfoTileComponent } from './components/shared/info-tile/info-tile.compo
     ClockComponent,
     TimeBookingComponent,
     AbsenceComponent,
-    InfoTileComponent
+    InfoTileComponent,
+    TimeBookingListComponent
   ],
   imports: [
     BrowserModule,
