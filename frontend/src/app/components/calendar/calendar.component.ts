@@ -32,7 +32,19 @@ export class CalendarComponent implements AfterViewInit {
     this.renderCalendar();
     this.prevNextIcon.forEach(icon => {
       icon.addEventListener("click", () => {
-        this.currMonth = icon.id === "prev" ? this.currMonth - 1 : this.currMonth + 1;
+        switch (icon.id) {
+          case "today":
+            this.date = new Date();
+            this.currYear = this.date.getFullYear();
+            this.currMonth = this.date.getMonth();
+            break;
+          case "prev":
+            this.currMonth = this.currMonth - 1;
+            break;
+          default:
+            this.currMonth = this.currMonth + 1;
+        }
+        // this.currMonth = icon.id === "prev" ? this.currMonth - 1 : this.currMonth + 1;
         if (this.currMonth < 0 || this.currMonth > 11) {
           this.date = new Date(this.currYear, this.currMonth, this.date.getDate());
           this.currYear = this.date.getFullYear();
@@ -53,16 +65,16 @@ export class CalendarComponent implements AfterViewInit {
     let liTag = "";
 
     for (let i = firstDayofMonth; i > 0; i--) {
-      liTag += `<li _ngcontent-ng-c800405659 class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+      liTag += `<li _ngcontent-ng-c2770918467 class="inactive">${lastDateofLastMonth - i + 1}</li>`;
     }
 
     for (let i = 1; i <= lastDateofMonth; i++) {
       const isToday = i === this.date.getDate() && this.currMonth === this.date.getMonth() && this.currYear === this.date.getFullYear() ? "active" : "";
-      liTag += `<li _ngcontent-ng-c800405659 class="${isToday}">${i}</li>`;
+      liTag += `<li _ngcontent-ng-c2770918467 class="${isToday}">${i}</li>`;
     }
 
     for (let i = lastDayofMonth; i < 6; i++) {
-      liTag += `<li _ngcontent-ng-c800405659 class="inactive">${i - lastDayofMonth + 1}</li>`;
+      liTag += `<li _ngcontent-ng-c2770918467 class="inactive">${i - lastDayofMonth + 1}</li>`;
     }
 
     this.currentDate.innerText = `${this.months[this.currMonth]} ${this.currYear}`;

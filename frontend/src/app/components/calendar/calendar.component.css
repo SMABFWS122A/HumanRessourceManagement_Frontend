@@ -7,7 +7,6 @@
 
 .contentCalendar{
   display: flex;
-  margin: 0 0px 0px 20px;
 }
 
 .wrapper{
@@ -97,7 +96,7 @@ header .current-date{
   transform: translate(-50%, -50%);
 }
 .days li.active::before{
-  background: #9B59B6;
+  background: #21376A;
 }
 
 .days li:not(.active):hover::before{
