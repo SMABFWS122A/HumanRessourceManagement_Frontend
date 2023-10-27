@@ -1,10 +1,10 @@
 form {
   display: flex;
   flex-direction: column;
-  border-radius: 10% ;
-  box-shadow: 0 0 5px #ea8f56;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  border-radius: 10px;
   margin: auto;
-  background: #E4E4E4;
+  background: white;
   width: 40%;
   border: none;
   padding: 40px 40px;
@@ -14,14 +14,6 @@ form {
   align-self: center;
   margin-bottom: 20px;
 }
-input[type=password] {
-  width: 100%;
-  padding: 10px 10px;
-  margin: 20px 0;
-  display: inline-block;
-  border: 5px solid #041a44;
-  box-sizing: border-box;
-}
 
 .bn {
   font-size: 130%;
@@ -30,17 +22,24 @@ input[type=password] {
 .pw {
   font-size: 130%;
 }
-input[type=text] {
+input {
   width: 100%;
   padding: 10px 10px;
-  margin: 20px 0;
+  margin: 20px 0 20px 0;
   display: inline-block;
-  border: 5px solid #041a44;
+  border: 0;
+  background-color: #E4E4E4;
   box-sizing: border-box;
+}
+.input-checkbox {
+  margin: 4px 5px 0 0;
+  padding: 0;
+  width: 11px;
+  height: 11px
 }
 
 button {
-  background-color: #041a44;
+  background-color: #21376A;
   color: white;
   padding: 10px 20px;
   margin: 8px 0;
@@ -50,8 +49,9 @@ button {
 }
 
 button:hover {
-  opacity: 1.2;
+  background-color: #f39201;
 }
+
 /*img.avatar {
   border-radius: 70%;
   width: 11%;

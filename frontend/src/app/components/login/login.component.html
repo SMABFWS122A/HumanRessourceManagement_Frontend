@@ -1,24 +1,28 @@
 <body>
   <div>
     <form>
-    <div class="first">
-      <strong>Login</strong>
-    </div>
+
+      <div class="first">
+        <strong>Login</strong>
+      </div>
+
       <div class="second">
       <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI4-mDP7ASPc4Gi94gLdvOs8RHqdT7pPXpLUujsq8OTeCpCKUp43WZEgHc0dP4qqpjXWE&usqp=CAU" alt="Default Avatar" class="avatar" >-->
-      <label class="bn" for="uname"><b>Benutzername :</b></label>
-      <input type="text" placeholder="Enter Username" id="uname" required>
+        <label class="bn" for="uname"><b>Benutzername</b></label>
+        <input type="text" placeholder="Enter Username" id="uname" required>
 
-      <label class="pw" for="psw"><b>Passwort :</b></label>
-      <input type="password" placeholder="Enter Password" id="psw" required>
+        <label class="pw" for="psw"><b>Passwort</b></label>
+        <input type="password" placeholder="Enter Password" id="psw" required>
+        <button type="submit">Login</button>
 
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+        <label style="display: flex; flex-flow: row">
+          <input type="checkbox" checked="checked" name="remember" class="input-checkbox">Remember me
+        </label>
+
+
     <!--<button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>-->
-    </div>
+      </div>
     </form>
   </div>
 </body>
