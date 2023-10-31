@@ -29,3 +29,25 @@
 button:hover {
     opacity: 0.8;
 }
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: #21376A;
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+  border: 4px double #cccccc;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 8px;
+  }
+

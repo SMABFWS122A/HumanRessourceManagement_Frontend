@@ -1,10 +1,18 @@
-<div style="display: flex; flex-direction: column" >
+<div>
+  <div class="top">
   <div>
     <button type="submit" class="kommenbtn" id="comming" (click)="buttonClickHandler('comming')">Kommen</button>
     <button type="submit" class="gehenbtn" id="going" (click)="buttonClickHandler('going')">Gehen</button>
   </div>
-  <div>
+    <div>
+      <button class="btn" (click)="openDialog()">Buchungskorrekturen</button>
+    </div>
+  </div>
+
+  <div class="bottom">
     <app-time-booking-list></app-time-booking-list>
   </div>
 </div>
+
+
 
