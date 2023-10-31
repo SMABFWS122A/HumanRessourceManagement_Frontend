@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { MatDialog } from '@angular/material/dialog';
+import {PopupComponent} from "../popup/popup.component";
 @Component({
   selector: 'app-time-booking',
   templateUrl: './time-booking.component.html',
@@ -13,6 +14,12 @@ export class TimeBookingComponent {
     } else {
       alert("Gehen wurde gestempelt um " + time);
     }
+  }
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PopupComponent);
+
   }
 
 }
