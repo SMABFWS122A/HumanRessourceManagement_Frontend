@@ -17,8 +17,11 @@
 
     <label class="beg">Begründung:</label>
     <textarea class="reason" cols="20" rows="5"></textarea>
+    <div style="display: flex; flex-direction: row; justify-content: space-between">
 
     <button type="submit" class="send" (click)="closeDialog()">Senden</button>
+      <button type="submit" class="close" (click)="closeDialog()">Close</button>
+    </div>
 
   </div>
 </div>

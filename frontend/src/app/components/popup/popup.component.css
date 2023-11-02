@@ -65,3 +65,13 @@
   color: #eeeeee;
 }
 
+.close {
+  width: 30%;
+  font-size: 120%;
+  margin-top: 10px;
+  background-color: #ab1818;
+  border-radius: 5px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+}
+
