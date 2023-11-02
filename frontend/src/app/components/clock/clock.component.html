@@ -1,5 +1,5 @@
 
-  <div class="wrapper">
+  <!--<div class="wrapper">
     <ul id="clock" style="align-self: center">
       <li class="numbers"><span>1</span></li>
       <li class="numbers"><span>2</span></li>
@@ -17,6 +17,7 @@
       <li id="minute"></li>
       <li id="second"></li>
     </ul>
-  </div>
-
-
+  </div>-->
+ <div class="digital-clock">
+   <div id="time">{{ currentTime | date: 'HH:mm:ss' }}</div>
+ </div>
