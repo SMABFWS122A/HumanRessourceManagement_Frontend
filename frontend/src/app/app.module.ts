@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MinimalHeaderComponent } from './components/minimal-header/minimal-header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import {ClockComponent} from "./components/clock/clock.component";
+import { ClockComponent } from "./components/clock/clock.component";
 import { TimeBookingComponent } from './components/time-booking/time-booking.component';
 import { AbsenceComponent } from './components/absence/absence.component';
 import { InfoTileComponent } from './components/shared/info-tile/info-tile.component';
@@ -15,8 +15,9 @@ import { TimeBookingListComponent } from './components/time-booking-list/time-bo
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { PopupComponent } from './components/popup/popup.component';
-import { HttpClientModule} from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {FormsModule} from "@angular/forms";
     MatButtonModule,
     MatDialogModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
