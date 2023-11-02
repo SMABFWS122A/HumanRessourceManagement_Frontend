@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Login} from "../../model/login";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,17 +12,27 @@ import {Login} from "../../model/login";
 export class LoginComponent implements OnInit{
 
   loginResult!: Login;
-  constructor(private client: HttpClient) {
+  constructor(private client: HttpClient, private router: Router) {
   }
   ngOnInit() {
-  this.client.get<Login>('http://localhost:8080/login/hansmueller@mail.de')
-    .subscribe(data => {
-      if (data.email === "hansmueller@mail.de") {
-        this.loginResult = data;
-        console.log(this.loginResult.passwort)
-      } else {
-        console.error('Unerwartete Datenstruktur oder Eigenschaft "email" nicht gefunden.');
-      }
-    });
+
+  }
+  confirmLogin() {
+    let emailInput!: HTMLInputElement;
+    let passwordInput!: HTMLInputElement;
+
+    emailInput = document.getElementById('uname') as HTMLInputElement;
+    passwordInput = document.getElementById('psw') as HTMLInputElement;
+
+    this.client.get<Login>('http://localhost:8080/login/' + emailInput.value as string)
+      .subscribe(data => {
+        if (data.passwort === passwordInput.value as string) {
+          this.router.navigate(['/dashboard']);
+        } else {
+          alert('Eigenschaft "email" nicht gefunden.')
+        }
+      });
+
   }
 }
+
