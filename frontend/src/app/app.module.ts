@@ -17,7 +17,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { PopupComponent } from './components/popup/popup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -40,8 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatDialogModule,
     HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
