@@ -6,7 +6,7 @@ import {TimeBookingComponent} from "./components/time-booking/time-booking.compo
 import {AbsenceComponent} from "./components/absence/absence.component";
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/:id', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'time-booking', component: TimeBookingComponent },
   { path: 'absence', component: AbsenceComponent },

@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit{
     this.client.get<Login>('http://localhost:8080/login/' + emailInput.value as string)
       .subscribe(data => {
         if (data.passwort === passwordInput.value as string) {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/dashboard/'+data.personalnummer]);
         } else {
-          alert('Eigenschaft "email" nicht gefunden.')
+          alert('Email oder Passwort ist falsch.')
         }
       });
 
