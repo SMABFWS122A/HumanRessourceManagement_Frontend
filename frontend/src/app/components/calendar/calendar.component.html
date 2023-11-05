@@ -23,7 +23,11 @@
         <li>Sat</li>
         <li>Sun</li>
       </ul>
-      <ul class="days"></ul>
+      <ul class="days">
+        <ng-container *ngFor="let item of classes; index as counter">
+          <li [ngClass]="item">{{days[counter]}}</li>
+        </ng-container>
+      </ul>
     </div>
   </div>
 </div>
