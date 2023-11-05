@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlParameterService } from "../../services/url-parameter-service.service";
-import { Router, Event } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-minimal-header',
@@ -13,7 +13,7 @@ export class MinimalHeaderComponent implements OnInit {
   personalnummerUrl!: string;
 
   constructor(private router: Router) {
-    this.router.events.subscribe((e: Event) => {
+    this.router.events.subscribe(() => {
       const currentUrl = this.router.url;
       const urlParts = currentUrl.split('/');
       this.personalnummerUrl = urlParts[2];

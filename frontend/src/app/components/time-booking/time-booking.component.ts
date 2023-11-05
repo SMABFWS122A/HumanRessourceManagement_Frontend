@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {PopupComponent} from "../popup/popup.component";
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Zeitbuchung } from "../../model/zeitbuchung";
 import { UrlParameterService } from "../../services/url-parameter-service.service";
@@ -38,8 +37,7 @@ export class TimeBookingComponent implements OnInit{
     }
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(PopupComponent);
-
+    this.dialog.open(PopupComponent);
   }
 
   setZeitbuchung(buttonID: string):void {
