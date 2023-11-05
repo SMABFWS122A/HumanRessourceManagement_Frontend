@@ -6,11 +6,11 @@ import {TimeBookingComponent} from "./components/time-booking/time-booking.compo
 import {AbsenceComponent} from "./components/absence/absence.component";
 
 const routes: Routes = [
-  { path: 'dashboard/:id', component: DashboardComponent },
+  { path: 'dashboard/:personalnummer', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'time-booking', component: TimeBookingComponent },
-  { path: 'absence', component: AbsenceComponent },
-  { path: '**', redirectTo: 'dashboard' }
+  { path: 'time-booking/:personalnummer', component: TimeBookingComponent },
+  { path: 'absence/:personalnummer', component: AbsenceComponent },
+  { path: '**', redirectTo: 'dashboard/:personalnummer' }
 ];
 
 @NgModule({

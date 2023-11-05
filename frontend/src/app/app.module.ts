@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PopupComponent } from './components/popup/popup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
+import { UrlParameterService } from "./services/url-parameter-service.service";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { FormsModule } from "@angular/forms";
     AbsenceComponent,
     InfoTileComponent,
     TimeBookingListComponent,
-    PopupComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,7 @@ import { FormsModule } from "@angular/forms";
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UrlParameterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
