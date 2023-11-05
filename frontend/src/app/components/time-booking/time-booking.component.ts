@@ -4,28 +4,25 @@ import {PopupComponent} from "../popup/popup.component";
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Zeitbuchung } from "../../model/zeitbuchung";
+import { UrlParameterService } from "../../services/url-parameter-service.service";
 @Component({
   selector: 'app-time-booking',
   templateUrl: './time-booking.component.html',
-  styleUrls: ['./time-booking.component.css']
+  styleUrls: ['./time-booking.component.css'],
+  providers: [UrlParameterService]
 })
 export class TimeBookingComponent implements OnInit{
 
-  idURL!: number | null;
+  personalnummerUrl!: number | null;
   zeitbuchungPost!: Zeitbuchung;
   time!: string;
 
 
 
-  constructor(public dialog: MatDialog, private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(public dialog: MatDialog, private http: HttpClient, private urlParameterService: UrlParameterService) {}
 
   ngOnInit() {
-    const idFromUrl = this.route.snapshot.paramMap.get('id');
-    if (idFromUrl !== null && !isNaN(+idFromUrl)) {
-      this.idURL = +idFromUrl;
-    } else {
-      this.idURL = null;
-    }
+    this.personalnummerUrl = this.urlParameterService.getParameter();
   }
 
   buttonClickHandler(buttonID: string){
@@ -50,7 +47,7 @@ export class TimeBookingComponent implements OnInit{
       uhrzeit: this.time,
       datum: this.dateFormatter(),
       buchungsart: buttonID,
-      personalnummer: this.idURL as number
+      personalnummer: this.personalnummerUrl as number
     };
   }
 
