@@ -1,4 +1,4 @@
-import {Component, OnInit, AfterViewInit, ElementRef, ViewChild, AfterViewChecked} from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
@@ -44,7 +44,6 @@ export class CalendarComponent implements AfterViewInit {
           default:
             this.currMonth = this.currMonth + 1;
         }
-        // this.currMonth = icon.id === "prev" ? this.currMonth - 1 : this.currMonth + 1;
         if (this.currMonth < 0 || this.currMonth > 11) {
           this.date = new Date(this.currYear, this.currMonth, this.date.getDate());
           this.currYear = this.date.getFullYear();
@@ -58,14 +57,14 @@ export class CalendarComponent implements AfterViewInit {
   }
 
   renderCalendar() {
-    const firstDayofMonth = new Date(this.currYear, this.currMonth, 1).getDay();
+    const firstDayofMonth = new Date(this.currYear, this.currMonth, 1).getDay() === 0 ? 7 : new Date(this.currYear, this.currMonth, 1).getDay();
     const lastDateofMonth = new Date(this.currYear, this.currMonth + 1, 0).getDate();
-    const lastDayofMonth = new Date(this.currYear, this.currMonth, lastDateofMonth).getDay();
+    const lastDayofMonth = new Date(this.currYear, this.currMonth, lastDateofMonth).getDay() === 0 ? 7 : new Date(this.currYear, this.currMonth, lastDateofMonth).getDay();
     const lastDateofLastMonth = new Date(this.currYear, this.currMonth, 0).getDate();
     let liTag = "";
 
-    for (let i = firstDayofMonth; i > 0; i--) {
-      liTag += `<li _ngcontent-ng-c2770918467 class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+    for (let i = firstDayofMonth; i > 1; i--) {
+      liTag += `<li _ngcontent-ng-c2770918467 class="inactive">${lastDateofLastMonth - i + 2}</li>`;
     }
 
     for (let i = 1; i <= lastDateofMonth; i++) {
@@ -73,7 +72,7 @@ export class CalendarComponent implements AfterViewInit {
       liTag += `<li _ngcontent-ng-c2770918467 class="${isToday}">${i}</li>`;
     }
 
-    for (let i = lastDayofMonth; i < 6; i++) {
+    for (let i = lastDayofMonth; i < 7; i++) {
       liTag += `<li _ngcontent-ng-c2770918467 class="inactive">${i - lastDayofMonth + 1}</li>`;
     }
 
