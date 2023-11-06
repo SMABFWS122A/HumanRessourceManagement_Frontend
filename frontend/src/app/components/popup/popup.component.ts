@@ -2,7 +2,10 @@ import {Component, OnInit, NgModule} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UrlParameterService} from "../../services/url-parameter-service.service";
-import {Zeitbuchung} from "../../model/zeitbuchung"
+import {Zeitbuchung} from "../../model/zeitbuchung";
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Inject } from '@angular/core';
+import {TimeBookingComponent} from "../time-booking/time-booking.component";
 import { FormsModule } from '@angular/forms';
 import {Router} from "@angular/router";
 
@@ -14,19 +17,21 @@ import {Router} from "@angular/router";
 })
 export class PopupComponent implements OnInit{
 
-  personalnummerUrl!: number | null;
+  personal!: number | null;
   zeitbuchungPost!: Zeitbuchung;
   time!: string;
   inputValue: string = '';
   selectedValue: string = '';
   dateValue: string = '';
 
+
   getValue(inputValue: string) {
     this.inputValue = inputValue;
     return inputValue;
   }
 
-  constructor(public dialogRef: MatDialogRef<PopupComponent>,private http: HttpClient, private urlParameterService: UrlParameterService) {
+  constructor(public dialogRef: MatDialogRef<PopupComponent>,private http: HttpClient, private urlParameterService: UrlParameterService, @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.personal = data.persNr;
   }
 
   ngOnInit() {
@@ -46,7 +51,7 @@ export class PopupComponent implements OnInit{
       uhrzeit: this.time,
       datum: this.dateValue,
       buchungsart: this.selectedValue,
-      personalnummer: this.personalnummerUrl as number
+      personalnummer: this.personal as number
     };
   }
 

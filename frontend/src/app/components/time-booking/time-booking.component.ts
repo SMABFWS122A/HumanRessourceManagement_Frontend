@@ -37,7 +37,9 @@ export class TimeBookingComponent implements OnInit{
     }
   }
   openDialog(): void {
-    this.dialog.open(PopupComponent);
+    this.dialog.open(PopupComponent, {
+      data: { persNr : this.personalnummerUrl }
+    });
   }
 
   setZeitbuchung(buttonID: string):void {
