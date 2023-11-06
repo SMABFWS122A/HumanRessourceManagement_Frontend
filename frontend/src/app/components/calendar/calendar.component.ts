@@ -17,7 +17,7 @@ export class CalendarComponent implements OnInit {
   currMonth!: number;
   months!: string[];
 
-  classes:string[] = [];
+  classes: string[] = [];
   days: number[] = [];
 
   constructor() {
@@ -31,7 +31,7 @@ export class CalendarComponent implements OnInit {
     this.date = new Date();
     this.currYear = this.date.getFullYear();
     this.currMonth = this.date.getMonth();
-    this.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    this.months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
     this.renderCalendar();
     this.prevNextIcon.forEach(icon => {
       icon.addEventListener("click", () => {
@@ -52,9 +52,9 @@ export class CalendarComponent implements OnInit {
         this.days = [];
 
         if (this.currMonth < 0 || this.currMonth > 11) {
-          this.date = new Date(this.currYear, this.currMonth, this.date.getDate());
-          this.currYear = this.date.getFullYear();
-          this.currMonth = this.date.getMonth();
+          const newDate = new Date(this.currYear, this.currMonth, this.date.getDate());
+          this.currYear = newDate.getFullYear();
+          this.currMonth = newDate.getMonth();
         } else {
           this.date = new Date();
         }
