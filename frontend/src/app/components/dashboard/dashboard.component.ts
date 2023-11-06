@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlParameterService } from "../../services/url-parameter-service.service";
+import {HttpClient} from "@angular/common/http";
+import {Mitarbeiter} from "../../model/mitarbeiter";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,11 +12,18 @@ import { UrlParameterService } from "../../services/url-parameter-service.servic
 export class DashboardComponent implements OnInit {
 
   personalnummerUrl!: number | null;
+  mitarbeiterDaten: Mitarbeiter = {};
 
-  constructor(private urlParameterService: UrlParameterService) {
+  constructor(private urlParameterService: UrlParameterService, private client: HttpClient,) {
   }
 
   ngOnInit() {
     this.personalnummerUrl = this.urlParameterService.getParameter();
+
+    this.client.get<Mitarbeiter>('http://localhost:8080/mitarbeiter/' + this.personalnummerUrl )
+      .subscribe(data => {
+        this.mitarbeiterDaten.vorname = data.vorname;
+        this.mitarbeiterDaten.nachname = data.nachname;
+      });
   }
 }
