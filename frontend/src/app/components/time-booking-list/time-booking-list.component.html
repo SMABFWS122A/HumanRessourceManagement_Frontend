@@ -1,14 +1,14 @@
 <div class="contentTimeBooking">
   <div class="wrapper">
     <header>
-      <p class="current-date">23.10 - 29.10.2023</p>
+      <p class="current-date"></p>
       <div class="icons">
-<!--        <span id="today" class="material-symbols-rounded">-->
-<!--          <img-->
-<!--            width="35"-->
-<!--            src="assets/icons/calendar-today.png"-->
-<!--          />-->
-<!--        </span>-->
+        <span id="today" class="material-symbols-rounded">
+          <img
+            width="35"
+            src="assets/icons/calendar-today.png"
+          />
+        </span>
         <span id="prev" class="material-symbols-rounded"><</span>
         <span id="next" class="material-symbols-rounded">></span>
       </div>
@@ -16,150 +16,80 @@
     <div class="timeBooking">
       <ul class="days">
         <div>
-          <li>Mon</li>
+          <li>Mo</li>
           <ul class="times">
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
+            <ng-container *ngFor="let item of timeBookingTyp[0]; index as counter">
+              <li>
+                <div class="timeBookingType">{{item}}</div>
+                <div>{{timeBookingTime[0][counter]}} Uhr</div>
+              </li>
+            </ng-container>
           </ul>
         </div>
         <div>
-          <li>Tue</li>
+          <li>Di</li>
           <ul class="times">
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
+            <ng-container *ngFor="let item of timeBookingTyp[1]; index as counter">
+              <li>
+                <div class="timeBookingType">{{item}}</div>
+                <div>{{timeBookingTime[1][counter]}} Uhr</div>
+              </li>
+            </ng-container>
           </ul>
         </div>
         <div>
-          <li>Wed</li>
+          <li>Mi</li>
           <ul class="times">
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
+            <ng-container *ngFor="let item of timeBookingTyp[2]; index as counter">
+              <li>
+                <div class="timeBookingType">{{item}}</div>
+                <div>{{timeBookingTime[2][counter]}} Uhr</div>
+              </li>
+            </ng-container>
           </ul>
         </div>
         <div>
-          <li>Thu</li>
+          <li>Do</li>
           <ul class="times">
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
+            <ng-container *ngFor="let item of timeBookingTyp[3]; index as counter">
+              <li>
+                <div class="timeBookingType">{{item}}</div>
+                <div>{{timeBookingTime[3][counter]}} Uhr</div>
+              </li>
+            </ng-container>
           </ul>
         </div>
         <div>
-          <li>Fri</li>
+          <li>Fr</li>
           <ul class="times">
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
+            <ng-container *ngFor="let item of timeBookingTyp[4]; index as counter">
+              <li>
+                <div class="timeBookingType">{{item}}</div>
+                <div>{{timeBookingTime[4][counter]}} Uhr</div>
+              </li>
+            </ng-container>
           </ul>
         </div>
         <div>
-          <li>Sat</li>
+          <li>Sa</li>
           <ul class="times">
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
+            <ng-container *ngFor="let item of timeBookingTyp[5]; index as counter">
+              <li>
+                <div class="timeBookingType">{{item}}</div>
+                <div>{{timeBookingTime[5][counter]}} Uhr</div>
+              </li>
+            </ng-container>
           </ul>
         </div>
         <div>
-          <li>Sun</li>
+          <li>So</li>
           <ul class="times">
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Kommen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
-            <li>
-              <div class="timeBookingType">Gehen:</div>
-              <div>09:12:23 Uhr</div>
-            </li>
+            <ng-container *ngFor="let item of timeBookingTyp[6]; index as counter">
+              <li>
+                <div class="timeBookingType">{{item}}</div>
+                <div>{{timeBookingTime[6][counter]}} Uhr</div>
+              </li>
+            </ng-container>
           </ul>
         </div>
       </ul>
