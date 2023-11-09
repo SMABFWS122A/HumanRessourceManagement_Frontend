@@ -27,13 +27,11 @@ export class TimeBookingComponent implements OnInit{
   buttonClickHandler(buttonID: string){
     this.time = new Date().toLocaleTimeString();
     if (buttonID === "kommen") {
-      alert("Kommen wurde gestempelt um " + this.time);
       this.setZeitbuchung(buttonID);
-      this.sendData();
+      this.sendData(buttonID);
     } else {
-      alert("Gehen wurde gestempelt um " + new Date());
       this.setZeitbuchung(buttonID);
-      this.sendData();
+      this.sendData(buttonID);
     }
   }
   openDialog(): void {
@@ -51,7 +49,7 @@ export class TimeBookingComponent implements OnInit{
     };
   }
 
-  sendData() {
+  sendData(buttonID:string) {
     const apiUrl = 'http://localhost:8080/zeitbuchung';
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -64,8 +62,15 @@ export class TimeBookingComponent implements OnInit{
 
     const data = JSON.stringify(jsonData); // JSON-String erstellen
 
-    this.http.post(apiUrl, data, { headers }).subscribe((response: any) => {
+    this.http.post(apiUrl, data, { headers, observe:'response' }).subscribe((response:any) => {
       console.log('Antwort von der API:', response);
+      console.dir(response);
+      if (response.status === 200) {
+        alert(buttonID + " wurde gestempelt um " + this.time);
+      }
+      else {
+        alert ('Buchung konnte nicht durchgeführt werden')
+      }
     });
   }
 

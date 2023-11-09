@@ -42,7 +42,7 @@ export class PopupComponent implements OnInit{
   buttonClickHandler(buttonID: string){
       this.time = this.getValue(this.inputValue);
       this.setZeitbuchung();
-      this.sendData();
+      this.sendData(buttonID);
       this.closeDialog();
   }
 
@@ -55,7 +55,7 @@ export class PopupComponent implements OnInit{
     };
   }
 
-  sendData() {
+  sendData(buttonID:string) {
     const apiUrl = 'http://localhost:8080/zeitbuchung';
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -68,19 +68,15 @@ export class PopupComponent implements OnInit{
 
     const data = JSON.stringify(jsonData); // JSON-String erstellen
 
-    this.http.post(apiUrl, data, { headers }).subscribe((response: any) => {
+    this.http.post(apiUrl, data, { headers , observe: 'response'}).subscribe((response: any) => {
       console.log('Antwort von der API:', response);
+      if (response.status === 200) {
+        console.log('Alles joot')
+      }
+      else {
+        alert ('Buchung konnte nicht durchgeführt werden')
+      }
     });
-  }
-
-  dateFormatter(): string {
-    const today = new Date();
-
-    const year = today.getFullYear();
-    const month = (today.getMonth() + 1).toString().padStart(2, '0');
-    const day = today.getDate().toString().padStart(2, '0');
-
-    return `${year}-${month}-${day}`;
   }
   closeDialog(): void {
     this.dialogRef.close();
