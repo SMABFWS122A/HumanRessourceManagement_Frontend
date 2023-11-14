@@ -1,4 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {UrlParameterService} from "../../services/url-parameter-service.service";
+import {Mitarbeiter} from "../../model/mitarbeiter";
+import {HttpClient} from "@angular/common/http";
+import {Zeitbuchung} from "../../model/zeitbuchung";
 
 @Component({
   selector: 'app-time-booking-list',
@@ -15,30 +19,37 @@ export class TimeBookingListComponent implements OnInit {
   actDate!: Date;
   currDates: Date[] = [];
 
+  personalnummerUrl!: number | null;
 
-  timeBookingTyp: string[][] =
-    [
-      ["Kommen", "Gehen", "Kommen", "Gehen"],
-      ["Gehen", "Kommen", "Gehen", "Kommen", "Gehen"],
-      ["Kommen", "Gehen", "Kommen", "Gehen"],
-      ["Gehen", "Kommen", "Gehen", "Kommen", "Kommen", "Kommen"],
-      ["Kommen", "Gehen", "Kommen", "Gehen"],
-      [],
-      []
-    ];
-  timeBookingTime: string[][] =
-    [
-      ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-      ["09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-      ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-      ["09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-      ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-      [],
-      []
-    ];
-  constructor() {
+  timeBookingTyp: string[][] = [[],[],[],[],[],[],[]];
+  timeBookingTime: string[][]  = [[],[],[],[],[],[],[]];
+
+  // timeBookingTyp: string[][] =
+  //   [
+  //     ["Kommen", "Gehen", "Kommen", "Gehen"],
+  //     ["Gehen", "Kommen", "Gehen", "Kommen", "Gehen"],
+  //     ["Kommen", "Gehen", "Kommen", "Gehen"],
+  //     ["Gehen", "Kommen", "Gehen", "Kommen", "Kommen", "Kommen"],
+  //     ["Kommen", "Gehen", "Kommen", "Gehen"],
+  //     [],
+  //     []
+  //   ];
+  // timeBookingTime: string[][] =
+  //   [
+  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
+  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23"],
+  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
+  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23"],
+  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
+  //     [],
+  //     []
+  //   ];
+  constructor(private urlParameterService: UrlParameterService, private client: HttpClient) {
   }
   ngOnInit() {
+    this.personalnummerUrl = this.urlParameterService.getParameter();
+    console.log("personalnummer: " + this.personalnummerUrl)
+
     this.currentDate = document.querySelector(".current-date") as HTMLElement;
     this.prevNextIcon = document.querySelectorAll(".icons span");
 
@@ -76,6 +87,18 @@ export class TimeBookingListComponent implements OnInit {
   }
 
   renderTimeBookingList(){
+    for(let i = 0; i < 7; i++){
+      this.client.get<Zeitbuchung[]>('http://localhost:8080/zeitbuchungen/' + this.personalnummerUrl + '/' + this.currDates[i].toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }))
+        .subscribe(data => {
+          const dataLength = data.length;
+          for( let y: number = 0; y < dataLength; y++){
+            const timeBookingTypToAdd: string = data[y].buchungsart
+            const timeBookingTimeToAdd: string = data[y].uhrzeit
+            this.timeBookingTyp[i].push(timeBookingTypToAdd);
+            this.timeBookingTime[i].push(timeBookingTimeToAdd);
+          }
+        });
+    }
 
     this.currentDate.innerText = `${this.currDates[0].toLocaleDateString()} - ${this.currDates[6].toLocaleDateString()}`;
   }
