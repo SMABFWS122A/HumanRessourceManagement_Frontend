@@ -3,21 +3,21 @@
     <app-calendar></app-calendar>
   </div>
   <div class="right-content">
-    <a class="text"> Buchungsanträge </a>
+    <a class="text"> Abwesenheitsanträge </a>
     <select class="dropdown" [(ngModel)]="absenceType">
       <option value="Urlaub">Tarifurlaub</option>
     </select>
 
     <label class="date-text" for="start" >Start Abwesenheit:</label>
-    <input type="date" id="start" [(ngModel)]="startDate" name="start" class="date-tag" value="2024-01-01" min="2024-01-01" max="2028-12-31" />
+    <input type="date" id="start" [(ngModel)]="startDate" name="start" class="date-tag" value="2023-01-01" min="2023-01-01" max="2028-12-31" />
 
     <label class="date-text" for="end">Ende Abwesenheit:</label>
-    <input type="date" id="end" [(ngModel)]="endDate" name="end" class="date-tag" value="2024-01-01" min="2024-01-01" max="2028-12-31" />
+    <input type="date" id="end" [(ngModel)]="endDate" name="end" class="date-tag" value="2023-01-01" min="2023-01-01" max="2028-12-31" />
 
     <label class="beg">Begründung:</label>
     <textarea class="reason" cols="20" rows="5"></textarea>
 
-    <button type="submit" class="send">Senden</button>
+    <button type="submit" class="send" (click)="buttonClickHandler()">Senden</button>
 
   </div>
 </div>

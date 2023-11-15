@@ -1,20 +1,20 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, NgModule} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UrlParameterService} from "../../services/url-parameter-service.service";
-import {Zeitbuchung} from "../../model/zeitbuchung";
 import {Urlaub} from "../../model/urlaub";
 
 @Component({
   selector: 'app-absence',
   templateUrl: './absence.component.html',
-  styleUrls: ['./absence.component.css']
+  styleUrls: ['./absence.component.css'],
+  providers: [UrlParameterService]
 })
 export class AbsenceComponent implements OnInit{
   personalnummerUrl!: number | null;
   urlaubsbuchungPost!: Urlaub;
-  startDate!: string;
-  endDate!: string;
-  absenceType!: string;
+  startDate: string = '';
+  endDate: string = '' ;
+  absenceType: string = '';
 
   constructor(private http: HttpClient, private urlParameterService: UrlParameterService) {
 
@@ -24,7 +24,7 @@ export class AbsenceComponent implements OnInit{
     this.personalnummerUrl = this.urlParameterService.getParameter();
   }
 
-  buttonClickHandler(buttonID: string){
+  buttonClickHandler(){
     this.setZeitbuchung();
     this.sendData();
   }
@@ -40,11 +40,10 @@ export class AbsenceComponent implements OnInit{
 
   sendData() {
     const apiUrl = 'http://localhost:8080/urlaubsbuchung';
-
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const jsonData = {
-      startDate: this.urlaubsbuchungPost?.startDate,
-      endDate: this.urlaubsbuchungPost?.endDate,
+      vonDatum: this.urlaubsbuchungPost?.startDate,
+      bisDatum: this.urlaubsbuchungPost?.endDate,
       buchungsart: this.urlaubsbuchungPost?.buchungsart,
       personalnummer: this.urlaubsbuchungPost?.personalnummer
     };
