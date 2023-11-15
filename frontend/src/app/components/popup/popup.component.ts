@@ -1,6 +1,6 @@
 import {Component, OnInit, NgModule} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {UrlParameterService} from "../../services/url-parameter-service.service";
 import {Zeitbuchung} from "../../model/zeitbuchung";
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -8,6 +8,8 @@ import { Inject } from '@angular/core';
 import {TimeBookingComponent} from "../time-booking/time-booking.component";
 import { FormsModule } from '@angular/forms';
 import {Router} from "@angular/router";
+import {catchError} from "rxjs/operators";
+import {throwError} from "rxjs";
 
 @Component({
   selector: 'app-popup',
@@ -68,7 +70,17 @@ export class PopupComponent implements OnInit{
 
     const data = JSON.stringify(jsonData); // JSON-String erstellen
 
-    this.http.post(apiUrl, data, { headers , observe: 'response'}).subscribe((response: any) => {
+    this.http.post(apiUrl, data, { headers , observe: 'response'}).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 400) {
+          console.error('Bad Request:', error.error);
+          // Hier kannst du spezifische Aktionen für den 400-Fehler durchführen
+          // Zum Beispiel eine Meldung anzeigen oder spezifische Logik ausführen
+          alert('Ungültige Uhrzeit');
+        }
+        return throwError('Ungültige Uhrzeit');
+      })
+    ).subscribe((response: any) => {
       console.log('Antwort von der API:', response);
       if (response.status === 200) {
         console.log('Alles joot')

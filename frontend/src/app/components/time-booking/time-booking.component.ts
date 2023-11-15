@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {PopupComponent} from "../popup/popup.component";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
 import { Zeitbuchung } from "../../model/zeitbuchung";
 import { UrlParameterService } from "../../services/url-parameter-service.service";
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import {getXHRResponse} from "rxjs/internal/ajax/getXHRResponse";
 @Component({
   selector: 'app-time-booking',
   templateUrl: './time-booking.component.html',
@@ -62,9 +65,18 @@ export class TimeBookingComponent implements OnInit{
 
     const data = JSON.stringify(jsonData); // JSON-String erstellen
 
-    this.http.post(apiUrl, data, { headers, observe:'response' }).subscribe((response:any) => {
-      console.log('Antwort von der API:', response);
-      console.dir(response);
+
+    this.http.post(apiUrl, data, { headers, observe:'response' })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 400) {
+            console.error('Bad Request:', error.error);
+            alert('Ungültige Uhrzeit')
+          }
+          return throwError('Ungültige Uhrzeit');
+        })
+      ).subscribe((response:any) => {
+      console.log(response.status)
       if (response.status === 200) {
         alert(buttonID + " wurde gestempelt um " + this.time);
       }
