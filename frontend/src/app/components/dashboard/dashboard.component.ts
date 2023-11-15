@@ -9,6 +9,7 @@ import {Fehlermeldung} from "../../model/fehlermeldung";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   providers: [UrlParameterService]
+
 })
 export class DashboardComponent implements OnInit {
 
@@ -16,25 +17,19 @@ export class DashboardComponent implements OnInit {
   mitarbeiterDaten: Mitarbeiter = {};
   fehlermeldung: Fehlermeldung = {};
 
+
+
+
   constructor(private urlParameterService: UrlParameterService, private http: HttpClient, private client: HttpClient) {
   }
 
   ngOnInit() {
     this.personalnummerUrl = this.urlParameterService.getParameter();
-
-    this.client.get<Fehlermeldung>('http://localhost:8080/fehlermeldung/' + this.personalnummerUrl)
-      .subscribe(data => {
-        this.fehlermeldung.meldung = data.meldung;
-      });
-
-    this.http.post('http://localhost:8080/fehlermeldung/' + this.personalnummerUrl ,{ observe:'response' }).subscribe((response:any) => {
-      console.log('Antwort von der API:', response);
-      console.dir(response);
-      if (response.status === 400) {
-        alert (this.fehlermeldung.meldung);
-      }
-    });
-
+      this.client.get<Fehlermeldung>('http://localhost:8080/fehlermeldung/' + this.personalnummerUrl)
+        .subscribe(data => {
+          this.fehlermeldung.fehlermeldung = data.fehlermeldung;
+          alert(this.fehlermeldung.fehlermeldung)
+        });
 
     this.client.get<Mitarbeiter>('http://localhost:8080/mitarbeiter/' + this.personalnummerUrl)
       .subscribe(data => {
