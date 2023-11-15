@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'time-booking/:personalnummer', component: TimeBookingComponent },
   { path: 'absence/:personalnummer', component: AbsenceComponent },
-  { path: '**', redirectTo: 'dashboard/:personalnummer' }
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
