@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit{
 
     this.client.get<Login>('http://localhost:8080/login/' + emailInput.value as string)
       .subscribe(data => {
-        console.log("hallo das geht")
         if (data.passwort === passwordInput.value as string) {
           this.router.navigate(['/dashboard/'+data.personalnummer]);
         } else {
