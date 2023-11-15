@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {PopupComponent} from "../popup/popup.component";
 import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
@@ -21,7 +21,7 @@ export class TimeBookingComponent implements OnInit{
 
 
 
-  constructor(public dialog: MatDialog, private http: HttpClient, private urlParameterService: UrlParameterService) {}
+  constructor(public dialog: MatDialog, private http: HttpClient, private urlParameterService: UrlParameterService, private zone: NgZone) {}
 
   ngOnInit() {
     this.personalnummerUrl = this.urlParameterService.getParameter();
@@ -29,7 +29,7 @@ export class TimeBookingComponent implements OnInit{
 
   buttonClickHandler(buttonID: string){
     this.time = new Date().toLocaleTimeString();
-    if (buttonID === "kommen") {
+    if (buttonID === "Kommen") {
       this.setZeitbuchung(buttonID);
       this.sendData(buttonID);
     } else {
@@ -77,6 +77,7 @@ export class TimeBookingComponent implements OnInit{
         })
       ).subscribe((response:any) => {
       console.log(response.status)
+      this.reloadPage();
       if (response.status === 200) {
         alert(buttonID + " wurde gestempelt um " + this.time);
       }
@@ -94,5 +95,11 @@ export class TimeBookingComponent implements OnInit{
     const day = today.getDate().toString().padStart(2, '0');
 
     return `${year}-${month}-${day}`;
+  }
+
+  reloadPage(): void {
+    this.zone.run(() => {
+      location.reload();
+    });
   }
 }
