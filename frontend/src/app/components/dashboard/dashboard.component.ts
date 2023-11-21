@@ -3,6 +3,7 @@ import { UrlParameterService } from "../../services/url-parameter-service.servic
 import {HttpClient} from "@angular/common/http";
 import {Mitarbeiter} from "../../model/mitarbeiter";
 import {Fehlermeldung} from "../../model/fehlermeldung";
+import {Gleitzeit} from "../../model/gleitzeit";
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +17,8 @@ export class DashboardComponent implements OnInit {
   personalnummerUrl!: number | null;
   mitarbeiterDaten: Mitarbeiter = {};
   fehlermeldung: Fehlermeldung = {};
+  urlaubstage!: number;
+  gleitzeitsaldo!: number;
 
 
 
@@ -36,5 +39,16 @@ export class DashboardComponent implements OnInit {
         this.mitarbeiterDaten.vorname = data.vorname;
         this.mitarbeiterDaten.nachname = data.nachname;
       });
+
+    this.client.get<number>('http://localhost:8080/urlaubstage/' + this.personalnummerUrl + '/' + new Date().toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' }))
+      .subscribe(data => {
+        this.urlaubstage = data;
+      });
+
+    this.client.get<Gleitzeit>('http://localhost:8080/gleitzeit/' + this.personalnummerUrl )
+      .subscribe(data => {
+        this.gleitzeitsaldo = data.gleitzeitsaldo;
+      });
+
   }
 }

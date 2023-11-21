@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {UrlParameterService} from "../../services/url-parameter-service.service";
-import {Mitarbeiter} from "../../model/mitarbeiter";
 import {HttpClient} from "@angular/common/http";
 import {Zeitbuchung} from "../../model/zeitbuchung";
 
@@ -24,26 +23,6 @@ export class TimeBookingListComponent implements OnInit {
   timeBookingTyp: string[][] = [[],[],[],[],[],[],[]];
   timeBookingTime: string[][]  = [[],[],[],[],[],[],[]];
 
-  // timeBookingTyp: string[][] =
-  //   [
-  //     ["Kommen", "Gehen", "Kommen", "Gehen"],
-  //     ["Gehen", "Kommen", "Gehen", "Kommen", "Gehen"],
-  //     ["Kommen", "Gehen", "Kommen", "Gehen"],
-  //     ["Gehen", "Kommen", "Gehen", "Kommen", "Kommen", "Kommen"],
-  //     ["Kommen", "Gehen", "Kommen", "Gehen"],
-  //     [],
-  //     []
-  //   ];
-  // timeBookingTime: string[][] =
-  //   [
-  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-  //     ["09:12:23", "09:12:23", "09:12:23", "09:12:23"],
-  //     [],
-  //     []
-  //   ];
   constructor(private urlParameterService: UrlParameterService, private client: HttpClient) {
   }
   ngOnInit() {

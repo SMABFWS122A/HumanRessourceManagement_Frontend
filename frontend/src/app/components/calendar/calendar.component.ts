@@ -9,7 +9,6 @@ import {Component, OnInit} from '@angular/core';
 
 export class CalendarComponent implements OnInit {
 
-  daysTag!: HTMLElement;
   currentDate!: HTMLElement;
   prevNextIcon!: NodeListOf<Element>;
   date!: Date;
@@ -25,7 +24,6 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.daysTag = document.querySelector(".days") as HTMLElement;
     this.currentDate = document.querySelector(".current-date") as HTMLElement;
     this.prevNextIcon = document.querySelectorAll(".icons span");
     this.date = new Date();
