@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {UrlParameterService} from "../../services/url-parameter-service.service";
-import {HttpClient} from "@angular/common/http";
-import {Zeitbuchung} from "../../model/zeitbuchung";
+import { Component, OnInit } from '@angular/core';
+import { UrlParameterService } from "../../services/url-parameter-service.service";
+import { HttpClient } from "@angular/common/http";
+import { Zeitbuchung } from "../../model/zeitbuchung";
 
 @Component({
   selector: 'app-time-booking-list',
@@ -27,7 +27,6 @@ export class TimeBookingListComponent implements OnInit {
   }
   ngOnInit() {
     this.personalnummerUrl = this.urlParameterService.getParameter();
-    console.log("personalnummer: " + this.personalnummerUrl)
 
     this.currentDate = document.querySelector(".current-date") as HTMLElement;
     this.prevNextIcon = document.querySelectorAll(".icons span");

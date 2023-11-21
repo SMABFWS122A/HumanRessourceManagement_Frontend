@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UrlParameterService } from "../../services/url-parameter-service.service";
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./minimal-header.component.css'],
   providers: [UrlParameterService]
 })
-export class MinimalHeaderComponent implements OnInit {
+export class MinimalHeaderComponent {
 
   personalnummerUrl!: string;
 
@@ -20,7 +20,4 @@ export class MinimalHeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-  }
 }

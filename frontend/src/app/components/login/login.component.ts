@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Login} from "../../model/login";
+import { Component } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Login } from "../../model/login";
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,14 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit{
+export class LoginComponent {
 
-  loginResult!: Login;
   constructor(private client: HttpClient, private router: Router) {
   }
-  ngOnInit() {
 
-  }
   confirmLogin() {
     let emailInput!: HTMLInputElement;
     let passwordInput!: HTMLInputElement;

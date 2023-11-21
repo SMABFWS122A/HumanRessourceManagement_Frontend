@@ -1,12 +1,11 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import {PopupComponent} from "../popup/popup.component";
+import { PopupComponent } from "../popup/popup.component";
 import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
 import { Zeitbuchung } from "../../model/zeitbuchung";
 import { UrlParameterService } from "../../services/url-parameter-service.service";
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import {getXHRResponse} from "rxjs/internal/ajax/getXHRResponse";
 @Component({
   selector: 'app-time-booking',
   templateUrl: './time-booking.component.html',
@@ -18,8 +17,6 @@ export class TimeBookingComponent implements OnInit{
   personalnummerUrl!: number | null;
   zeitbuchungPost!: Zeitbuchung;
   time!: string;
-
-
 
   constructor(public dialog: MatDialog, private http: HttpClient, private urlParameterService: UrlParameterService, private zone: NgZone) {}
 
@@ -76,7 +73,6 @@ export class TimeBookingComponent implements OnInit{
           return throwError('Ungültige Uhrzeit');
         })
       ).subscribe((response:any) => {
-      console.log(response.status)
       this.reloadPage();
       if (response.status === 200) {
         alert(buttonID + " wurde gestempelt um " + this.time);
