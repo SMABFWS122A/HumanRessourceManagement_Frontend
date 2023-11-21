@@ -83,7 +83,7 @@ export class PopupComponent implements OnInit{
     ).subscribe((response: any) => {
       console.log('Antwort von der API:', response);
       if (response.status === 200) {
-        console.log('Alles joot')
+        console.log('Erfolgreich')
       }
       else {
         alert ('Buchung konnte nicht durchgeführt werden')

@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, NgModule} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {UrlParameterService} from "../../services/url-parameter-service.service";
 import {Urlaub} from "../../model/urlaub";
